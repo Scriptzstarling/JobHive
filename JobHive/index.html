@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHive</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">JobHive</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#job-listing">Find Jobs</a></li>
+                <li><a href="#testimonials">Our Clients</a></li>
+                <li><a href="#Contact">Contact Us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login">Login</button>
+                <button class="register">Register</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Potential<br>Find Your Perfect <span class="highlight">Job Vacancy Today</span></h1>
+            <p>Explore thousands of job opportunities with all the information you need, and manage all your job.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Job title">
+                <input type="text" placeholder="Location">
+                <select>
+                    <option value="fulltime">Fulltime</option>
+                    <option value="parttime">Part-time</option>
+                </select>
+                <button>Find Job</button>
+            </div>
+            <p class="popular-keywords">Popular Keywords: Design Graphics, UI/UX, Illustrator, Copy Writing</p>
+        </div>
+        <div class="hero-image">
+            <img src="Pics\Men with laptop.png" alt="Man with laptop">
+        </div>
+    </section>
+
+    <section class="partners">
+        <img src="Pics\UPWORK.png" alt="Upwork">
+        <img src="Pics\NOTION.png" alt="Notion">
+        <img src="Pics\WEBFLOW.png" alt="Webflow">
+        <img src="Pics\NETFLIX.png" alt="Netflix">
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works?</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="Pics\Create profile.png" alt="Create a profile">
+                <h3>Create a profile</h3>
+                <p>Start by creating a profile on the job finder website. Fill out all the necessary information.</p>
+            </div>
+            <div class="step">
+                <img src="Pics\Search Job.png" alt="Search for job">
+                <h3>Search for job</h3>
+                <p>Use the job finder’s search function to find jobs that match your skills and experience.</p>
+            </div>
+            <div class="step">
+                <img src="Pics\Apply For Job.png" alt="Apply for the job">
+                <h3>Apply for the job</h3>
+                <p>Once your application materials are ready, submit your application through the job finder.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-listing">
+        <div id="job-listing">
+            <h2>There Are More Than 100 Jobs Available Worldwide on JobHive</h2>
+            <p>JobHive has various job categories, so you can choose based on your passion and there are filters that match our research.</p>
+
+            <div class="job-filters">
+                <select id="job-sort">
+                    <option value="latest">Latest Job</option>
+                    <option value="oldest">Oldest Job</option>
+                </select>
+                <div class="job-categories">
+                    <button class="category-btn">FrontendDev</button>
+                    <button class="category-btn">UI Designer</button>
+                    <button class="category-btn">Illustrator</button>
+
+                </div>
+                <button class="filter-btn">Filters</button>
+            </div>
+
+            <div class="job-cards" id="job-cards">
+                <!-- Job cards will be dynamically generated here -->
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" id="prev-page">◄</button>
+                <span id="page-info">Page 1 of 10</span>
+                <button class="pagination-btn" id="next-page">►</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div id="testimonials">
+            <h3 class="subtitle">What Clients Say</h3>
+            <p class="description">We place huge value on strong relationships and have seen the benefit they bring to our business. Customer feedback is vital in helping us to get it right.</p>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="Pics\Profile 1.png" alt="Nat Reynolds">
+                        <p>Excited to come across this chief accountant position! The qualifications listed perfectly match my expertise in financial reporting and budget management. Looking forward to the opportunity to lead and collaborate with a dynamic
+                            finance team.</p>
+                        <h4>Nat Reynolds</h4>
+                        <span>Chief Accountant</span>
+                    </div>
+                    <div class="slide">
+                        <img src="Pics\Profile 2.png" alt="Celia Almeda">
+                        <p>Clients are interested in a chief accountant position that matches their qualifications and offers opportunities for growth and collaboration. They're keen on learning more about the company culture and advancement prospects.</p>
+                        <h4>Celia Almeda</h4>
+                        <span>Secretary</span>
+                    </div>
+                    <div class="slide">
+                        <img src="Pics\Profile 3.png" alt="Bob Roberts">
+                        <p>Clients are seeking a chief accountant who not only meets the job requirements but also demonstrates strong leadership skills and a collaborative mindset. They're interested in candidates who can drive financial success and contribute
+                            positively to the organization's goals.</p>
+                        <h4>Bob Roberts</h4>
+                        <span>Sales Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subscribe">
+        <div id="Contact">
+            <div class="container">
+                <h1>Stay Updated on the Latest JobHive for Job Opportunities</h1>
+                <p>Resources and tips to help you land your dream job. Subscribe to our email list and receive the latest job openings in web design, as well as helpful.</p>
+                <div class="email-input">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript for the slider hover effect
+        const slides = document.querySelectorAll('.slide');
+
+        slides.forEach(slide => {
+            slide.addEventListener('mouseenter', () => {
+                slide.style.transform = 'scale(1.05)';
+            });
+
+            slide.addEventListener('mouseleave', () => {
+                slide.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Your Gateway to a brighter future!</h2>
+                <p>25-1 Jalan 2/27a, Seksyen 1<br>Wangsa Maju, 53300 Kuala Lumpur, Malaysia.</p>
+                <div class="social-media">
+                    <a href="#"><img src="Pics\Facebook_1.png" alt="Facebook"></a>
+                    <a href="#"><img src="Pics\Twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Pics\Youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">Full-Time Jobs</a></li>
+                        <li><a href="#">Intern Jobs</a></li>
+                        <li><a href="#">Remote Jobs</a></li>
+                        <li><a href="#">Contract Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resource</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Term of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Career Tips</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">Latest Job</a></li>
+                        <li><a href="#">Popular Company</a></li>
+                        <li><a href="#">Trending Startup</a></li>
+                        <li><a href="#">Featured Jobs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024, JobHive. Inc - Powered by Script Starling</p>
+            <a href="#">Term of Cookies</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
